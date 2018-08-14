@@ -1,9 +1,12 @@
 require 'pry'
 
-def convert_to_int
-  card_number = "5541808923795240"
+def double_it
+  digits = get_digits("5541808923795240")
+  doubles_digits(digits)
+end
 
-  digits = card_number.chars
+def get_digits(card_number_string)
+  digits = card_number_string.chars
 
   integers = []
 
@@ -11,15 +14,27 @@ def convert_to_int
     # integers.push digit.to_i
     integers << digit.to_i
   end
+
+  return integers
 end
 
-doubled = []
+def doubles_digits(card_number_digits)
+  doubled = []
 
-integers.each do |integer|
-  doubled << integer * 2
+  card_number_digits.each do |integer|
+    doubled << integer * 2
+  end
+
+  p doubled
 end
 
-p doubled
+double_it
+
+# doubles_card_number("5541808923795240")
+
+# card_number = "5541808923795240"
+
+
 
 
 
